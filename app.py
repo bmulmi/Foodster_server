@@ -119,4 +119,4 @@ def follow(uid, vid):
     return (jsonify(updated_user))
 '''
 
-app.run(debug=True)
+# app.run(debug=True)
