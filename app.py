@@ -4,7 +4,7 @@ from flask import jsonify
 from database import *
 
 app = Flask("__main__")
-CORS(app)
+# CORS(app)
 initialize()
 
 
