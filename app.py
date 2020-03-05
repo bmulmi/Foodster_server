@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 
 @app.route('/')
-def index():
+def hello():
     # print("works!")
     return("server running!")
 
