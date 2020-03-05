@@ -1,15 +1,15 @@
-from flask import Flask, request, jsonify
+from flask import Flask  # , request, jsonify
 # from flask_cors import CORS
 # from database import *
 
-app = Flask("__main__")
+app = Flask(__name__)
 # CORS(app)
 # initialize()
 
 
 @app.route('/')
 def index():
-    print("works!")
+    # print("works!")
     return("server running!")
 
 
