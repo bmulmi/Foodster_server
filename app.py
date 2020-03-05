@@ -1,11 +1,10 @@
-from flask import Flask, request
-from flask_cors import CORS
-from flask import jsonify
-from database import *
+from flask import Flask, request, jsonify
+# from flask_cors import CORS
+# from database import *
 
 app = Flask("__main__")
 # CORS(app)
-initialize()
+# initialize()
 
 
 @app.route('/')
@@ -14,6 +13,7 @@ def index():
     return("server running!")
 
 
+'''
 @app.route('/login', methods=['POST'])
 def login_index():
     login_data = request.form.copy()
@@ -117,6 +117,6 @@ def unfollow(uid, vid):
 def follow(uid, vid):
     updated_user = follow_vendor(uid, vid)
     return (jsonify(updated_user))
-
+'''
 
 app.run(debug=True)
