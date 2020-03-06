@@ -1,9 +1,9 @@
 from pymongo import MongoClient
 import configparser
-# from bson.objectid import ObjectId
-# from datetime import datetime
+from bson.objectid import ObjectId
+from datetime import datetime
 
-'''
+
 def initialize():
     config = configparser.ConfigParser()
     config.read('config.ini')
@@ -17,6 +17,8 @@ def initialize():
     vendors = db.vendors
     print("foodster-user database initialized")
 
+
+'''
 
 # insert or update user details
 def upsert_user(user):
