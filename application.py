@@ -121,5 +121,7 @@ def follow(uid, vid):
     return (jsonify(updated_user))
 
 
+wsgi_app = app.wsgi_app
+
 if __name__ == "__main__":
     app.run()
