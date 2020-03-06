@@ -11,6 +11,11 @@ def index():
     return "Server is up and running again!!"
 
 
+@app.route("/test")
+def test():
+    return "<h1>test ROUTE Received</h1>"
+
+
 @app.route('/login', methods=['POST'])
 def login_index():
     login_data = request.form.copy()
