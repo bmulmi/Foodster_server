@@ -7,7 +7,7 @@ from datetime import datetime
 def initialize():
     config = configparser.ConfigParser()
     config.read('config.ini')
-    connection_str = config['database']['mongo_connection']
+    connection_str = config['database']['cosmos_connection']
     client = MongoClient(connection_str)
     global users
     global vendors
