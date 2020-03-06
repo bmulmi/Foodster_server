@@ -18,9 +18,11 @@ def test():
 
 @app.route('/login', methods=['POST'])
 def login_index():
+    print("/login post request received")
     login_data = request.form.copy()
     user_id = find_user(login_data)
     if user_id:
+        print("user_id to return:" + user_id)
         return user_id
     else:
         return ("failure")
