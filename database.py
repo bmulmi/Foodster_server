@@ -1,18 +1,18 @@
 from pymongo import MongoClient
 import configparser
-from bson.objectid import ObjectId
-from datetime import datetime
+# from bson.objectid import ObjectId
+# from datetime import datetime
 
-
+'''
 def initialize():
     config = configparser.ConfigParser()
     config.read('config.ini')
-    connection_str = config['database']['mongo_connection']
+    connection_str = config['database']['cosmos_connection']
     client = MongoClient(connection_str)
     global users
     global vendors
 
-    db = client["foodster-user"]
+    db = client.foodster
     users = db.users
     vendors = db.vendors
     print("foodster-user database initialized")
@@ -185,17 +185,19 @@ def get_user_info(userId):
     user['id'] = user['_id']
     return user
 
+'''
+
 
 def debuging():
-    initialize()
-    user = find_user({'email': 'bmulmi@ramapo.edu'})
-    vendor = find_vendor({'email': 'sodexomyway@ramapo.edu'})
-    dat = follow_vendor(user, vendor)
+    print("debuggin funtion running...")
+    # initialize()
+    # print(get_user_info("5e613b9577a5ab30d090fde5"))
+    # user = find_user({'email': 'bmulmi@ramapo.edu'})
+    # vendor = find_vendor({'email': 'sodexomyway@ramapo.edu'})
+    # dat = follow_vendor(user, vendor)
     # get_wall_feed(user)
-    print(dat)
+    # print(dat)
 
 
-# debuging()
-# t = find_user({'email': 'bulmi@ramapo.edu'})
-# add_new_post(temp_id, [])
-# print(t)
+if __name__ == "__main__":
+    debugging()
