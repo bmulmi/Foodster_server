@@ -8,15 +8,26 @@ config = configparser.ConfigParser()
 config.read('config.ini')
 connection_str = config['database']['cosmos_connection']
 client = MongoClient(connection_str)
+
 global users
 global vendors
 
 db = client.foodster
 users = db.users
+print("users: ")
+print(users)
 vendors = db.vendors
 print("foodster-user database initialized")
 ###
-
+data = vendors.find()
+all_vendors = list()
+for each in data:
+    temp = str(each['_id'])
+    each['_id'] = temp
+    each['id'] = temp
+    all_vendors.append(each)
+print("all vendors")
+print(all_vendors)
 # initialize()
 
 
