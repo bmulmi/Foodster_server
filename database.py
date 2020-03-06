@@ -18,8 +18,6 @@ def initialize():
     print("foodster-user database initialized")
 
 
-'''
-
 # insert or update user details
 def upsert_user(user):
     if '_id' in user:
@@ -186,8 +184,6 @@ def get_user_info(userId):
     user['_id'] = str(user['_id'])
     user['id'] = user['_id']
     return user
-
-'''
 
 
 def debuging():

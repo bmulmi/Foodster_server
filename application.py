@@ -11,7 +11,6 @@ def index():
     return "Server is up and running again!!"
 
 
-'''
 @app.route('/login', methods=['POST'])
 def login_index():
     login_data = request.form.copy()
@@ -115,7 +114,7 @@ def unfollow(uid, vid):
 def follow(uid, vid):
     updated_user = follow_vendor(uid, vid)
     return (jsonify(updated_user))
-'''
+
 
 if __name__ == "__main__":
     app.run()
