@@ -3,7 +3,21 @@ from database import *
 
 app = Flask(__name__)
 
-initialize()
+# trial code
+config = configparser.ConfigParser()
+config.read('config.ini')
+connection_str = config['database']['cosmos_connection']
+client = MongoClient(connection_str)
+global users
+global vendors
+
+db = client.foodster
+users = db.users
+vendors = db.vendors
+print("foodster-user database initialized")
+###
+
+# initialize()
 
 
 @app.route("/")
