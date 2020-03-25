@@ -174,6 +174,12 @@ def get_wall_feed(id):
 
 def get_vendor_info(vendorId):
     vendor = vendors.find_one({'_id': ObjectId(vendorId)})
+    temp = vendor['posts']
+    sorted_posts = sorted(
+        temp, key=lambda x: datetime.strptime(x['timeStamp'], "%Y-%m-%dT%H:%M:%S"))
+
+    posts_sorted = sorted_posts[::-1]
+    vendor['posts'] = posts_sorted
     vendor['_id'] = str(vendor['_id'])
     vendor['id'] = vendor['_id']
     return vendor
@@ -186,12 +192,12 @@ def get_user_info(userId):
     return user
 
 
-def debuging():
+def debugging():
     print("debuggin funtion running...")
-    # initialize()
+    initialize()
     # print(get_user_info("5e613b9577a5ab30d090fde5"))
     # user = find_user({'email': 'bmulmi@ramapo.edu'})
-    # vendor = find_vendor({'email': 'sodexomyway@ramapo.edu'})
+
     # dat = follow_vendor(user, vendor)
     # get_wall_feed(user)
     # print(dat)
