@@ -24,7 +24,6 @@ def upsert_user(user):
         doc = {'firstName': user['firstName'],
                'lastName': user['lastName'],
                'email': user['email'],
-               'password': user['password'],
                'dob': user['dob'],
                'following': user['following']}
         print("udpating")
@@ -37,7 +36,6 @@ def upsert_user(user):
         users.insert_one({'firstName': user['firstName'],
                           'lastName': user['lastName'],
                           'email': user['email'],
-                          'password': user['password'],
                           'dob': user['dob'],
                           'following': []})
 
@@ -61,7 +59,7 @@ def upsert_vendor(vendor):
             'latitude': vendor['latitude'],
             'longitude': vendor['longitude'],
             'email': vendor['email'],
-            'password': vendor['password'],
+            # 'password': vendor['password'],
             'description': vendor['description'],
             'posts': vendor['posts']
         }
@@ -76,7 +74,7 @@ def upsert_vendor(vendor):
             'latitude': vendor['latitude'],
             'longitude': vendor['longitude'],
             'email': vendor['email'],
-            'password': vendor['password'],
+            # 'password': vendor['password'],
             'description': vendor['description'],
             'posts': []
         })

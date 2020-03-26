@@ -1,7 +1,10 @@
 from flask import Flask, request, jsonify
 from database import *
+# from flask_cors import CORS
 
 app = Flask(__name__)
+
+# CORS(app)
 
 initialize()
 
@@ -26,13 +29,6 @@ def login_index():
         return user_id
     else:
         return ("failure")
-
-
-def checkLoginValidation(data):
-    if data["email"] == user["username"] and data["password"] == user["password"]:
-        return True
-    else:
-        return False
 
 
 @app.route('/vendorlogin', methods=['POST'])
